@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <button>HIGH</button>
+    <form action="light.php" method="post">
+        <input type="submit" value="ON/OFF" name = "submit">
+    </form>
+    <a href = "logs.php">logs</a>
 </body>
 </html>
