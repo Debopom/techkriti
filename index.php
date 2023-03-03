@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="scripts.js"></script>
     <title>Document</title>
 
    
@@ -73,6 +74,9 @@
     <div id="mydiv">
     <form action="index.php" method="post">
     <h2>Smart Home Automation System</h2>
+    <div id="liveData">
+    <p>Loading Data...</p>
+    </div>
     <table id="mytable">
         <tr>
             <td>Light Control</td>
@@ -119,6 +123,16 @@
              ?>
             </td>
         </tr>
+        <tr>
+            <?php
+            $link = $database->getReference('IP');
+            $ip = $link->getValue();
+            ?>
+            <td>Connected into the same WIFI?</td>
+            <td><a href = <?php echo 'https://'.$ip?> target='_blank' >click here </a></td>
+            <td><?php echo $ip?></td>
+        </tr>
+        
 
         <tr>
             <td>Fan Speed</td>
@@ -137,19 +151,6 @@
         </tr>
     </table>
     </div>
-    
-    
-    
-    
-
-
-        <script>
-        document.getElementById("submit").onclick = function() {myFunction()};
-
-        function myFunction() {
-        document.getElementById("submit").innerHTML = "YOU CLICKED ME!";
-        }
-        </script>
     </form>
 
     

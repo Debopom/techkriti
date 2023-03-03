@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Live Update</title>
-    <meta charset="UTF-8">
-    <script type="text/javascript">
-        function fun() {  
-            var url = 'light_set.php';
-            xhr = getXmlHttpRequestObject();
-            
-            // asynchronous requests
-            xhr.open("GET", url, true);
-            // Send the request over the network
-            xhr.send(null); 
-        }  
-        window.addEventListener('load', function()
+window.addEventListener('load', function()
         {
             var xhr = null;
 
@@ -32,7 +17,7 @@
                 
                 // Date string is appended as a query with live data 
                 // for not to use the cached version 
-                var url = 'API.php';
+                var url = 'get_data.php';
                 xhr = getXmlHttpRequestObject();
                 xhr.onreadystatechange = evenHandler;
                 // asynchronous requests
@@ -56,11 +41,3 @@
                 }
             }
         });
-    </script>
-</head>
-<div id="liveData">
-    <p>Loading Data...</p>
-</div>
-<button onclick = "fun()">Click me</button>  
-</body>
-</html>
